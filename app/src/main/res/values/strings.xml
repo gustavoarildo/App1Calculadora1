@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">App1Calculadora1</string>
+    <string name="valor_1">Valor 1</string>
+    <string name="valor_2">Valor 2</string>
+    <string name="soma">Soma</string>
+    <string name="subtra_o">Subtração</string>
+    <string name="button">Button</string>
+    <string name="mult">MULT</string>
+    <string name="div">DIV</string>
+    <string name="raizq">RaizQ</string>
+    <string name="pot">POT</string>
+    <string name="log">LOG</string>
+    <string name="resultado">Resultado</string>
+    <string name="memorecuperar">MEMORECUPERAR</string>
+    <string name="memosub">MEMOSUB</string>
+    <string name="memoadd">MEMOADD</string>
+    <string name="de1para2">De1Para2</string>
+    <string name="de2para1">De2Para1</string>
+    <string name="de2para3">De2Para3</string>
+    <string name="de3para2">De3Para2</string>
+    <string name="todos_os_creditos_pelo_desenvolvimento_desta_calculadora_s_o_dos_alunos_gustavo_arildo_felix_e_leonardo_silva_felix">Todos os creditos pelo desenvolvimento desta calculadora são dos alunos Gustavo Arildo Felix e Leonardo Silva Felix</string>
+    <string name="resultado_na_outra_tela">resultado_na_outra_tela</string>
+</resources>
