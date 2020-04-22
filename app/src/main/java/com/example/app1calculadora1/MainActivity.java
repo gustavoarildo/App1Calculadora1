@@ -152,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
                 memoriaIntent = String.valueOf(memoria);
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
+
+                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -175,6 +177,8 @@ public class MainActivity extends AppCompatActivity {
                 memoriaIntent = String.valueOf(memoria);
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
+
+                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -198,6 +202,8 @@ public class MainActivity extends AppCompatActivity {
                 memoriaIntent = String.valueOf(memoria);
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
+
+                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -221,6 +227,8 @@ public class MainActivity extends AppCompatActivity {
                 memoriaIntent = String.valueOf(memoria);
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
+
+                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -244,6 +252,8 @@ public class MainActivity extends AppCompatActivity {
                 memoriaIntent = String.valueOf(memoria);
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
+
+                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -273,6 +283,8 @@ public class MainActivity extends AppCompatActivity {
                 memoriaIntent = String.valueOf(memoria);
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
+
+                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -298,6 +310,8 @@ public class MainActivity extends AppCompatActivity {
                 memoriaIntent = String.valueOf(memoria);
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
+
+                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -352,7 +366,7 @@ public class MainActivity extends AppCompatActivity {
                 //ActivityCompat.startActivity(MainActivity.this, i, activityOptionsCompat.toBundle());
                 startActivity(i);
                 //finish();
-                //overridePendingTransition(R.transition.slide_in, R.transition.slide_out);//TRAVA/CONGELA/TELAPRETA
+                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);//TRAVA/CONGELA/TELAPRETA
                 //setContentView(R.layout.activity_2);
 
             }
@@ -364,7 +378,7 @@ public class MainActivity extends AppCompatActivity {
 
     class MyGestureListener extends
             GestureDetector.SimpleOnGestureListener {
-        //handle 'swipe right' action only
+        //handle 'swipe left' action only
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2,
                                float velocityX, float velocityY) {
@@ -387,8 +401,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 startActivity(intent);
-                //overridePendingTransition(R.transition.slide_in,
-                       // R.transition.slide_out);
+                overridePendingTransition(R.transition.slide_in,
+                        R.transition.slide_out);
             }
             return true;
         }

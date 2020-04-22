@@ -1,12 +1,16 @@
 package com.example.app1calculadora1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GestureDetectorCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import static com.example.app1calculadora1.R.id.buttonDe2Para1;
 import static com.example.app1calculadora1.R.id.buttonDe2Para3;
@@ -21,6 +25,15 @@ public class Activity2 extends AppCompatActivity {
     String valor1IntentGlob;
     String valor2IntentGlob;
     String memoriaIntentGlob;
+
+    private GestureDetectorCompat gestureDetectorCompat;
+
+    @Override
+    public boolean
+    onTouchEvent(MotionEvent event) {
+        this.gestureDetectorCompat.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +107,10 @@ public class Activity2 extends AppCompatActivity {
                 i.putExtra("VALOR2", valor2IntentGlob);
                 i.putExtra("MEMORIA", memoriaIntentGlob);
                 startActivity(i);
+
+                overridePendingTransition(R.transition.slide2_in_dir,
+                        R.transition.slide2_out_esq);
+
             }
         });
 
@@ -103,8 +120,15 @@ public class Activity2 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(Activity2.this, Activity3.class);
                 startActivity(i);
+
+                overridePendingTransition(R.transition.mover_direita,
+                        R.transition.mover_esquerda);
+
             }
         });
+
+        gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
+
     }
 /*
     @Override
@@ -114,6 +138,48 @@ public class Activity2 extends AppCompatActivity {
     }
 
  */
+
+
+    class MyGestureListener extends
+            GestureDetector.SimpleOnGestureListener {
+        //handle 'swipe right' action only
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2,
+                               float velocityX, float velocityY) {
+            if (event2.getX() > event1.getX()) {
+                Toast.makeText(getBaseContext(),
+                        "Swipe direita - startActivity(1)" ,
+                        Toast.LENGTH_SHORT).show();
+                //switch anoter activity
+                Intent intent = new Intent(
+                        Activity2.this, MainActivity.class);
+
+                intent.putExtra("RESULTADO", resultadoIntentGlob);
+                intent.putExtra("VALOR1", valor1IntentGlob);
+                intent.putExtra("VALOR2", valor2IntentGlob);
+                intent.putExtra("MEMORIA", memoriaIntentGlob);
+
+
+
+                startActivity(intent);
+                overridePendingTransition(R.transition.slide2_in_dir,
+                        R.transition.slide2_out_esq);
+            }
+            if (event2.getX() < event1.getX()) {
+                Toast.makeText(getBaseContext(),
+                        "Swipe esquerda - startActivity(3)" ,
+                        Toast.LENGTH_SHORT).show();
+                //switch anoter activity
+                Intent intent = new Intent(
+                        Activity2.this, Activity3.class);
+
+                startActivity(intent);
+                overridePendingTransition(R.transition.mover_direita,
+                 R.transition.mover_esquerda);
+            }
+            return true;
+        }
+    }
 
 
 }
