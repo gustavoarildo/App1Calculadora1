@@ -3,12 +3,16 @@ package com.example.app1calculadora1;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.GestureDetectorCompat;
 
 import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText ed1;
@@ -30,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
     String valorUmIntent = null;
     String valorDoisIntent = null;
     String memoriaIntent = null;
+
+    private GestureDetectorCompat gestureDetectorCompat;
+
+    @Override
+    public boolean
+    onTouchEvent(MotionEvent event) {
+        this.gestureDetectorCompat.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -344,5 +357,41 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
     }
+
+
+    class MyGestureListener extends
+            GestureDetector.SimpleOnGestureListener {
+        //handle 'swipe right' action only
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2,
+                               float velocityX, float velocityY) {
+            if (event2.getX() < event1.getX()) {
+                Toast.makeText(getBaseContext(),
+                        "Swipe esquerda - startActivity(2)" ,
+                        Toast.LENGTH_SHORT).show();
+                //switch anoter activity
+                Intent intent = new Intent(
+                        MainActivity.this, Activity2.class);
+
+                intent.putExtra("RESULTADO", resultadoIntent);
+                valorUmIntent = ed1.getText().toString();
+                intent.putExtra("VALOR1", valorUmIntent);
+                valorDoisIntent = ed2.getText().toString();
+                intent.putExtra("VALOR2", valorDoisIntent);
+                memoriaIntent = String.valueOf(memoria);
+                intent.putExtra("MEMORIA", memoriaIntent);
+
+
+
+                startActivity(intent);
+                //overridePendingTransition(R.transition.slide_in,
+                       // R.transition.slide_out);
+            }
+            return true;
+        }
+    }
+
 }

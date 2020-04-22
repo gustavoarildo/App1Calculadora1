@@ -19,7 +19,7 @@ public class Activity3 extends AppCompatActivity {
 
         btDe3Para2 = (Button)findViewById(buttonDe3Para2);
 
-        //açao do botao Trocar Activity de 2 para 3
+        //açao do botao Trocar Activity de 3 para 2
         btDe3Para2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
