@@ -1,8 +1,7 @@
 package com.example.app1calculadora1;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.ActivityOptionsCompat;
+
 import androidx.core.view.GestureDetectorCompat;
 
 import android.os.Bundle;
@@ -153,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
 
-                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
+                //overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -178,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
 
-                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
+                //overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -203,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
 
-                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
+                //overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -228,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
 
-                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
+                //overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -253,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
 
-                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
+                //overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -284,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
 
-                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
+                //overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -311,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("MEMORIA", memoriaIntent);
                 startActivity(i);
 
-                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
+                //overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
             }
         });
 
@@ -362,12 +361,10 @@ public class MainActivity extends AppCompatActivity {
                 memoriaIntent = String.valueOf(memoria);
                 i.putExtra("MEMORIA", memoriaIntent);
 
-                //ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(getApplicationContext(),R.transition.fade_in, R.transition.mover_direita);
-                //ActivityCompat.startActivity(MainActivity.this, i, activityOptionsCompat.toBundle());
+
                 startActivity(i);
-                //finish();
-                overridePendingTransition(R.transition.slide_in, R.transition.slide_out);//TRAVA/CONGELA/TELAPRETA
-                //setContentView(R.layout.activity_2);
+
+                //overridePendingTransition(R.transition.slide_in, R.transition.slide_out);
 
             }
         });
@@ -401,8 +398,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 startActivity(intent);
-                overridePendingTransition(R.transition.slide_in,
-                        R.transition.slide_out);
+                //overridePendingTransition(R.transition.slide_in,
+                  //      R.transition.slide_out);
             }
             return true;
         }

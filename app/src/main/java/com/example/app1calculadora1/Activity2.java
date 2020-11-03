@@ -108,8 +108,8 @@ public class Activity2 extends AppCompatActivity {
                 i.putExtra("MEMORIA", memoriaIntentGlob);
                 startActivity(i);
 
-                overridePendingTransition(R.transition.slide2_in_dir,
-                        R.transition.slide2_out_esq);
+                //overridePendingTransition(R.transition.slide2_in_dir,
+               //         R.transition.slide2_out_esq);
 
             }
         });
@@ -121,8 +121,8 @@ public class Activity2 extends AppCompatActivity {
                 Intent i = new Intent(Activity2.this, Activity3.class);
                 startActivity(i);
 
-                overridePendingTransition(R.transition.mover_direita,
-                        R.transition.mover_esquerda);
+               // overridePendingTransition(R.transition.mover_direita,
+              //          R.transition.mover_esquerda);
 
             }
         });
@@ -130,15 +130,6 @@ public class Activity2 extends AppCompatActivity {
         gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
 
     }
-/*
-    @Override
-    public void finish(){
-        super.finish();
-        overridePendingTransition(R.transition.mover_esquerda, R.transition.fade_out);
-    }
-
- */
-
 
     class MyGestureListener extends
             GestureDetector.SimpleOnGestureListener {
@@ -162,8 +153,8 @@ public class Activity2 extends AppCompatActivity {
 
 
                 startActivity(intent);
-                overridePendingTransition(R.transition.slide2_in_dir,
-                        R.transition.slide2_out_esq);
+              //  overridePendingTransition(R.transition.slide2_in_dir,
+              //          R.transition.slide2_out_esq);
             }
             if (event2.getX() < event1.getX()) {
                 Toast.makeText(getBaseContext(),
@@ -174,8 +165,8 @@ public class Activity2 extends AppCompatActivity {
                         Activity2.this, Activity3.class);
 
                 startActivity(intent);
-                overridePendingTransition(R.transition.mover_direita,
-                 R.transition.mover_esquerda);
+             //   overridePendingTransition(R.transition.mover_direita,
+             //    R.transition.mover_esquerda);
             }
             return true;
         }

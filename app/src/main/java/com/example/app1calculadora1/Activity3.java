@@ -40,8 +40,8 @@ public class Activity3 extends AppCompatActivity {
                 Intent i = new Intent(Activity3.this, Activity2.class);
                 startActivity(i);
 
-                overridePendingTransition(R.transition.fade_in,
-                        R.transition.fade_out);
+                //overridePendingTransition(R.transition.fade_in,
+                //        R.transition.fade_out);
 
             }
         });
@@ -69,8 +69,8 @@ public class Activity3 extends AppCompatActivity {
 
                 startActivity(intent);
 
-                overridePendingTransition(R.transition.fade_in,
-                        R.transition.fade_out);
+               // overridePendingTransition(R.transition.fade_in,
+                //        R.transition.fade_out);
 
             }
             return true;
